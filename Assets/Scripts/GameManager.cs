@@ -156,7 +156,7 @@ public class GameManager : MonoBehaviour
 
         // UI'ya gönder
         uiController?.ShowCustomerMessage(warningMessage); // messageText
-        uiController?.SetCustomerDialogue(customerDialogue); // dialogText
+        uiController?.dialogText.SetText(customerDialogue); // dialogText
 
         // 3 saniye bekle ve yeni round başlat
         StartCoroutine(WaitAndNextRound(3f));
@@ -175,7 +175,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("⏰ Süre doldu! Dükkan puanı -5");
 
         uiController?.ShowCustomerMessage("Müşteri sinirlendi ve gitti! -5 Dükkan puanı.");
-        uiController?.SetCustomerDialogue("Müşteri: Ne biçim iksir dükkanı bu!"); // Diyalog da değişir
+        uiController?.dialogText.SetText("Müşteri: Ne biçim iksir dükkanı bu!"); // Diyalog da değişir
         StartCoroutine(WaitAndNextRound(3f));
     }
 }

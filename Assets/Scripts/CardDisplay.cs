@@ -12,7 +12,7 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     [Header("Renk Ayarları")]
     public Color normalColor = Color.white;
-    public Color selectedColor = Color.yellow;
+    public Color selectedColor = Color.cyan;
 
     [Header("UI Referansları")]
     public TextMeshProUGUI nameText;
@@ -21,10 +21,16 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public GameObject tooltipContainer;
     public Image tooltipImage;
 
+    [Header("Audio")]
+    public AudioClip selectSound;
+    private AudioSource audioSource;
+
     void Awake()
     {
         button = GetComponent<Button>();
         uiController = FindFirstObjectByType<GameUIController>();
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
 
         if (button != null)
             button.onClick.AddListener(ToggleSelection);
@@ -54,8 +60,6 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         if (tooltipContainer != null)
         {
             tooltipContainer.SetActive(true);
-
-            
         }
 
         if (cardData != null && tooltipImage != null)
@@ -71,7 +75,6 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        
         if (tooltipContainer != null)
         {
             tooltipContainer.SetActive(false);
@@ -82,6 +85,10 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         isSelected = !isSelected;
         SetButtonColor(isSelected ? selectedColor : normalColor);
+        if (selectSound != null)
+        {
+            audioSource.PlayOneShot(selectSound);
+        }
         uiController?.OnCardSelected(this, isSelected);
     }
 
