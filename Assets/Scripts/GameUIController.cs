@@ -14,6 +14,7 @@ public class GameUIController : MonoBehaviour
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI messageText; // Uyarı mesajları
     public TextMeshProUGUI dialogText; // Müşteri diyaloğu
+    public Image TypeImage;
 
     public Button submitButton;
 
@@ -44,10 +45,14 @@ public class GameUIController : MonoBehaviour
         {
             requestText.text =
                 $"İSTEK: {req.potionName}\n"
-                + $"Tür: {req.GetTypeString()} (Minimum 2 aynı tür)\n"
-                + $"Instabilite: {req.minInstability} - {req.maxInstability}";
+                + $"Tür: {req.GetTypeString()} \n (Minimum 2 aynı tür)\n"
+                + $"Denge Değeri: {req.minInstability} - {req.maxInstability}";
+            
         }
-
+        if (req.TypeSprite != null)
+        {
+            TypeImage.sprite = req.TypeSprite;
+        }
         // Başlangıçta müşteri normal diyalogu
         if (dialogText != null)
             dialogText.text = $"Müşteri: \"{req.customerDialog}\"";

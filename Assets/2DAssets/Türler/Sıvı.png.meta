@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f03815070c3366349bcafbb5b5f14f43
+guid: 0c767b951ac22564a9807fc4b2f712a8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1377739118154941371
-    second: Kara Mantar_0
+      213: -6598318814772815274
+    second: Kart (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Kara Mantar_0
+      name: Kart (1)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1240
-        height: 1748
+        width: 95
+        height: 95
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bb309caad66be1310800000000000000
-      internalID: 1377739118154941371
+      spriteID: 65a90b25fff0e64a0800000000000000
+      internalID: -6598318814772815274
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Kara Mantar_0: 1377739118154941371
+      Kart (1)_0: -6598318814772815274
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
