@@ -140,7 +140,7 @@ MonoBehaviour:
   selectedColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   nameText: {fileID: 2674295483860591109}
   valueText: {fileID: 252349066806399505}
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 6043431198872339958}
 --- !u!1 &5949066451678893601
 GameObject:
   m_ObjectHideFlags: 0

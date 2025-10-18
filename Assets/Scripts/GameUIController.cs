@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -10,6 +11,10 @@ public class GameUIController : MonoBehaviour
     public CardDisplay[] cardSlots = new CardDisplay[5];
     public TextMeshProUGUI requestText;
     public TextMeshProUGUI shopRatingText;
+    public TextMeshProUGUI timerText;
+    public TextMeshProUGUI messageText; // Uyarı mesajları
+    public TextMeshProUGUI dialogText; // Müşteri diyaloğu
+
     public Button submitButton;
 
     private List<CardDisplay> selectedCards = new List<CardDisplay>();
@@ -34,10 +39,19 @@ public class GameUIController : MonoBehaviour
             return;
 
         CustomerRequest req = gameManager.currentRequest;
-        requestText.text =
-            $"İSTEK: {req.potionName}\n"
-            + $"Tür: {req.GetTypeString()} (Min 2 aynı türden içerik seçmelisin)\n"
-            + $"Instabilite: {req.minInstability} - {req.maxInstability} arasında olmalıdır.";
+
+        if (requestText != null)
+        {
+            requestText.text =
+                $"İSTEK: {req.potionName}\n"
+                + $"Tür: {req.GetTypeString()} (Minimum 2 aynı tür)\n"
+                + $"Instabilite: {req.minInstability} - {req.maxInstability}";
+        }
+
+        // Başlangıçta müşteri normal diyalogu
+        if (dialogText != null)
+            dialogText.text = $"Müşteri: \"{req.customerDialog}\"";
+
         shopRatingText.text = $"DÜKKAN PUANI: {gameManager.shopRating}";
 
         for (int i = 0; i < cardSlots.Length; i++)
@@ -54,6 +68,36 @@ public class GameUIController : MonoBehaviour
         selectedCards.Clear();
         if (submitButton != null)
             submitButton.interactable = false;
+    }
+
+    public void UpdateTimer(int seconds)
+    {
+        if (timerText != null)
+            timerText.text = $"Süre: {seconds}";
+    }
+
+    // messageText için uyarı mesajlarını göster
+    public void ShowCustomerMessage(string message)
+    {
+        if (messageText == null)
+            return;
+
+        messageText.text = message;
+        StartCoroutine(ClearMessageAfterDelay());
+    }
+
+    // dialogText’i değiştirmek için
+    public void SetCustomerDialogue(string dialogue)
+    {
+        if (dialogText != null)
+            dialogText.text = dialogue;
+    }
+
+    private IEnumerator ClearMessageAfterDelay()
+    {
+        yield return new WaitForSeconds(3f);
+        if (messageText != null)
+            messageText.text = "";
     }
 
     public void OnCardSelected(CardDisplay card, bool isSelected)

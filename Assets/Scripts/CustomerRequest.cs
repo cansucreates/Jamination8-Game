@@ -8,6 +8,9 @@ public class CustomerRequest
     public int minInstability;
     public int maxInstability;
 
+    [TextArea(2, 5)]
+    public string customerDialog; // Yeni alan
+
     public string GetTypeString()
     {
         switch (requiredType)
