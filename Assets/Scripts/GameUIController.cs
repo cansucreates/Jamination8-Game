@@ -37,7 +37,7 @@ public class GameUIController : MonoBehaviour
         requestText.text =
             $"İSTEK: {req.potionName}\n"
             + $"Tür: {req.GetTypeString()} (Min 2 aynı türden içerik seçmelisin)\n"
-            + $"Instabilite: {req.minInstability} - {req.maxInstability}";
+            + $"Instabilite: {req.minInstability} - {req.maxInstability} arasında olmalıdır.";
         shopRatingText.text = $"DÜKKAN PUANI: {gameManager.shopRating}";
 
         for (int i = 0; i < cardSlots.Length; i++)
