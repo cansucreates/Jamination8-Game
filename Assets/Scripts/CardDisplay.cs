@@ -1,8 +1,9 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class CardDisplay : MonoBehaviour
+public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public CardData cardData;
     private bool isSelected = false;
@@ -17,6 +18,8 @@ public class CardDisplay : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI valueText;
     public Image cardImage;
+    public GameObject tooltipContainer;
+    public Image tooltipImage;
 
     void Awake()
     {
@@ -44,6 +47,35 @@ public class CardDisplay : MonoBehaviour
 
         isSelected = false;
         SetButtonColor(normalColor);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (tooltipContainer != null)
+        {
+            tooltipContainer.SetActive(true);
+
+            
+        }
+
+        if (cardData != null && tooltipImage != null)
+        {
+            if (cardData.cardImage != null)
+            {
+                tooltipImage.sprite = cardData.cardImage;
+            }
+        }
+
+        Debug.Log(cardData.cardName + " kartının üstüne gelindi. Tooltip aktif.");
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        
+        if (tooltipContainer != null)
+        {
+            tooltipContainer.SetActive(false);
+        }
     }
 
     public void ToggleSelection()
