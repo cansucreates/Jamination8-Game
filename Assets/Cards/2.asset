@@ -15,4 +15,4 @@ MonoBehaviour:
   cardName: Kara Mantar
   materialType: 2
   instabilityValue: -1
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 1377739118154941371, guid: f03815070c3366349bcafbb5b5f14f43, type: 3}

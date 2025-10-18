@@ -15,4 +15,4 @@ MonoBehaviour:
   cardName: "Peri Kanad\u0131"
   materialType: 3
   instabilityValue: 1
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 2845025743460567425, guid: 332d1fb2866f03641823dbafce919819, type: 3}

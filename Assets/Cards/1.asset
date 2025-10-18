@@ -15,4 +15,4 @@ MonoBehaviour:
   cardName: "Goblin G\xF6zya\u015F\u0131"
   materialType: 1
   instabilityValue: 3
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 2300280807709930800, guid: 811f57e0e634db340858533a48881b93, type: 3}

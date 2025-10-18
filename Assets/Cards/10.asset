@@ -15,4 +15,4 @@ MonoBehaviour:
   cardName: "Kristal Par\xE7as\u0131"
   materialType: 3
   instabilityValue: -2
-  cardImage: {fileID: 0}
+  cardImage: {fileID: -3202028640184871463, guid: ffef0d88115902a45b3e8400e4d23f6e, type: 3}

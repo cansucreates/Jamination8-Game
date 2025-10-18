@@ -15,4 +15,4 @@ MonoBehaviour:
   cardName: Ay Tozu
   materialType: 3
   instabilityValue: 5
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 256964946501102959, guid: 535d3203b5eecaa41be915f7619db181, type: 3}

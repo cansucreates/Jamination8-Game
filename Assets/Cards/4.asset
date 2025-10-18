@@ -15,4 +15,4 @@ MonoBehaviour:
   cardName: "Y\u0131lan Derisi"
   materialType: 4
   instabilityValue: 0
-  cardImage: {fileID: 0}
+  cardImage: {fileID: -5341103812995307056, guid: ae948e16fba88d040983dc36eabd347a, type: 3}

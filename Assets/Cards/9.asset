@@ -15,4 +15,4 @@ MonoBehaviour:
   cardName: Saf Su
   materialType: 1
   instabilityValue: 0
-  cardImage: {fileID: 0}
+  cardImage: {fileID: -8902070425804591945, guid: afb6f13a3eec5f34f82bb4ef5991f305, type: 3}
