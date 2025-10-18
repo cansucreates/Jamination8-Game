@@ -1,24 +1,16 @@
 using UnityEngine;
 
-public enum MaterialType
+[System.Serializable]
+public class CustomerRequest
 {
-    Sıvı = 1,
-    Bitki = 2,
-    Enerji = 3,
-    Hayvan = 4,
-}
-
-[CreateAssetMenu(fileName = "CardData", menuName = "Potion Jam/CardData")]
-public class CardData : ScriptableObject
-{
-    public string cardName;
-    public MaterialType materialType;
-    public int instabilityValue;
-    public Sprite cardImage;
+    public string potionName;
+    public MaterialType requiredType;
+    public int minInstability;
+    public int maxInstability;
 
     public string GetTypeString()
     {
-        switch (materialType)
+        switch (requiredType)
         {
             case MaterialType.Sıvı:
                 return "Sıvı";

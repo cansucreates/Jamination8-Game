@@ -1,59 +1,121 @@
-using System.Collections.Generic; // for list
+using System.Collections.Generic;
 using UnityEngine;
-
-[System.Serializable]
-public class CustomerRequest
-{
-    public string potionName;
-    public int requiredType; // 1: Sıvı, 2: Bitki, 3: Enerji, 4: Hayvan
-    public int minInstability;
-    public int maxInstability;
-}
 
 public class GameManager : MonoBehaviour
 {
-    // müşteri isteklerini tutan liste
     public List<CustomerRequest> allRequests = new List<CustomerRequest>();
-
-    // card listesini tutan liste
     public List<CardData> allCards = new List<CardData>();
 
-    // eldeki kartları tutan liste
     public List<CardData> playerCards = new List<CardData>();
     public int shopRating = 0;
+
+    private GameUIController uiController;
 
     [HideInInspector]
     public CustomerRequest currentRequest;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-        // 1. rastgele müşteri isteği seç
-        currentRequest = allRequests[Random.Range(0, allRequests.Count)];
-
-        // 2. rastgele 5 kart seç
-        playerCards.Clear();
-        List<CardData> shuffledDeck = new List<CardData>(allCards);
-        for (int i = 0; i < 5; i++)
-        {
-            int randomIndex = Random.Range(0, shuffledDeck.Count);
-            playerCards.Add(shuffledDeck[randomIndex]);
-            shuffledDeck.RemoveAt(randomIndex);
-        }
-
-        // 3. müşteri isteğini ve kartları konsola yazdır (daha sonra UI ile değiştirilecek)
-        Debug.Log(
-            "Müşteri İsteği: "
-                + currentRequest.potionName
-                + " | Tür: "
-                + currentRequest.requiredType
-                + " | İstikrar Aralığı: "
-                + currentRequest.minInstability
-                + " - "
-                + currentRequest.maxInstability
-        );
+        uiController = FindFirstObjectByType<GameUIController>();
+        StartNewRound();
     }
 
-    // Update is called once per frame
-    void Update() { }
+    public void StartNewRound()
+    {
+        if (allRequests == null || allRequests.Count == 0)
+        {
+            Debug.LogError("allRequests boş! Inspector'da isteklerin ekli olduğundan emin ol.");
+            return;
+        }
+
+        if (allCards == null || allCards.Count < 5)
+        {
+            Debug.LogError("allCards eksik! En az 5 kart olmalı.");
+            return;
+        }
+
+        // 1️⃣ Rastgele bir müşteri isteği seç
+        currentRequest = allRequests[Random.Range(0, allRequests.Count)];
+
+        playerCards.Clear();
+
+        // 2️⃣ İstenen türden en az 2 kart garanti
+        List<CardData> typeCards = allCards.FindAll(c =>
+            c.materialType == currentRequest.requiredType
+        );
+        if (typeCards.Count < 2)
+        {
+            Debug.LogWarning(
+                "Yeterli sayıda istenen tür kartı yok! Tüm available tür kartları ekliyoruz."
+            );
+        }
+
+        for (int i = 0; i < 2 && typeCards.Count > 0; i++)
+        {
+            int idx = Random.Range(0, typeCards.Count);
+            playerCards.Add(typeCards[idx]);
+            typeCards.RemoveAt(idx);
+        }
+
+        // 3️⃣ Kalan kartları rastgele ekle
+        List<CardData> remainingCards = new List<CardData>(allCards);
+        remainingCards.RemoveAll(c => playerCards.Contains(c));
+
+        for (int i = playerCards.Count; i < 5; i++)
+        {
+            int idx = Random.Range(0, remainingCards.Count);
+            playerCards.Add(remainingCards[idx]);
+            remainingCards.RemoveAt(idx);
+        }
+
+        Debug.Log("Yeni tur başladı! Müşteri isteği: " + currentRequest.potionName);
+
+        // 4️⃣ UI güncellemesini çağır
+        uiController = uiController ?? FindFirstObjectByType<GameUIController>();
+        uiController?.UpdateUI();
+    }
+
+    public void SubmitPotion(List<CardData> selectedCards)
+    {
+        if (selectedCards == null || selectedCards.Count != 3)
+        {
+            Debug.Log("Lütfen tam olarak 3 kart seçin!");
+            return;
+        }
+
+        int totalInstability = 0;
+        int typeMatchCount = 0;
+        foreach (CardData card in selectedCards)
+        {
+            totalInstability += card.instabilityValue;
+            if (card.materialType == currentRequest.requiredType)
+                typeMatchCount++;
+        }
+
+        int ratingChange = 0;
+        bool typeSuccess = (typeMatchCount >= 2);
+        bool instabilitySuccess =
+            totalInstability >= currentRequest.minInstability
+            && totalInstability <= currentRequest.maxInstability;
+
+        if (!typeSuccess)
+        {
+            ratingChange = -2;
+            Debug.Log($"Tür eşleşmedi! ({typeMatchCount}/2)");
+        }
+        else if (!instabilitySuccess)
+        {
+            ratingChange = -1;
+            Debug.Log($"Instabilite dışında. ({totalInstability})");
+        }
+        else
+        {
+            ratingChange = +2;
+            Debug.Log($"Başarılı iksir! Instabilite: {totalInstability}");
+        }
+
+        shopRating += ratingChange;
+        Debug.Log("Yeni Puan: " + shopRating);
+        StartNewRound();
+    }
 }
