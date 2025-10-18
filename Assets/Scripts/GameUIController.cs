@@ -20,7 +20,7 @@ public class GameUIController : MonoBehaviour
     [Header("Seçilen Kart Önizlemeleri")]
     public Image[] previewSlots = new Image[3];
 
-    [Header("Karıştırma Sesi (Opsiyonel)")]
+    [Header("Karıştırma Sesi")]
     public AudioSource audioSource;
     public AudioClip stirSound;
 
