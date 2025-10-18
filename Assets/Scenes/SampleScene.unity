@@ -202,8 +202,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "D\xFCkkan Puan\u0131:"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: efac78f4c6180ff43963216f13a68e57, type: 2}
+  m_sharedMaterial: {fileID: -6299892451939943820, guid: efac78f4c6180ff43963216f13a68e57, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 16
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -312,6 +312,7 @@ RectTransform:
   - {fileID: 1328669988}
   - {fileID: 1656512569}
   - {fileID: 1674201823}
+  - {fileID: 1585024889}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -994,7 +995,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -621.08, y: 194.00543}
+  m_AnchoredPosition: {x: -621.08, y: 171}
   m_SizeDelta: {x: 483.84, y: 125.1819}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &818446822
@@ -1027,8 +1028,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "M\xFC\u015Fterinin istedi\u011Fi iksir"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: efac78f4c6180ff43963216f13a68e57, type: 2}
+  m_sharedMaterial: {fileID: -6299892451939943820, guid: efac78f4c6180ff43963216f13a68e57, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1058,7 +1059,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 17
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1166,8 +1167,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Kar\u0131\u015Ft\u0131r"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: efac78f4c6180ff43963216f13a68e57, type: 2}
+  m_sharedMaterial: {fileID: -6299892451939943820, guid: efac78f4c6180ff43963216f13a68e57, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1197,7 +1198,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 17
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1358,6 +1359,7 @@ MonoBehaviour:
   timerText: {fileID: 2001919423}
   messageText: {fileID: 1328669989}
   dialogText: {fileID: 1656512570}
+  TypeImage: {fileID: 1585024890}
   submitButton: {fileID: 322003218}
 --- !u!224 &1295976909
 RectTransform:
@@ -1566,8 +1568,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Uyar\u0131 mesaj\u0131"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: efac78f4c6180ff43963216f13a68e57, type: 2}
+  m_sharedMaterial: {fileID: -6299892451939943820, guid: efac78f4c6180ff43963216f13a68e57, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1597,7 +1599,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 16
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -1677,17 +1679,20 @@ MonoBehaviour:
     requiredType: 2
     minInstability: -4
     maxInstability: -2
+    TypeSprite: {fileID: -1105378339508487716, guid: 9e1abe3b852632546aa6b4f3d2843b22, type: 3}
     customerDialog: "Kesin ve kal\u0131c\u0131 bir uyku istiyorum. Hi\xE7bir risk
       olmas\u0131n."
   - potionName: "Zindelik Toni\u011Fi"
     requiredType: 1
     minInstability: -1
     maxInstability: 1
+    TypeSprite: {fileID: -6598318814772815274, guid: 0c767b951ac22564a9807fc4b2f712a8, type: 3}
     customerDialog: "Beni biraz canland\u0131racak ama yan etkisi olmayacak bir \u015Fey."
   - potionName: "H\u0131z \u0130ksiri"
     requiredType: 3
     minInstability: 2
     maxInstability: 4
+    TypeSprite: {fileID: 4395804532582801679, guid: b15d2d9a25502df4d83719a54a8306f3, type: 3}
     customerDialog: "\xC7ok h\u0131zl\u0131 ko\u015Fmam laz\u0131m. Etki k\u0131sa
       s\xFCrse de g\xFC\xE7l\xFC olsun."
   allCards:
@@ -1709,6 +1714,7 @@ MonoBehaviour:
     requiredType: 0
     minInstability: 0
     maxInstability: 0
+    TypeSprite: {fileID: 0}
     customerDialog: 
 --- !u!4 &1469033924
 Transform:
@@ -1804,6 +1810,81 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1585024888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1585024889}
+  - component: {fileID: 1585024891}
+  - component: {fileID: 1585024890}
+  m_Layer: 5
+  m_Name: TypeImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1585024889
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585024888}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 270241608}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -484, y: 312}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1585024890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585024888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1585024891
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585024888}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1592635801
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1967,7 +2048,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -580, y: 500.91}
+  m_AnchoredPosition: {x: -557, y: 500.91}
   m_SizeDelta: {x: 690.5028, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1656512570
@@ -1992,8 +2073,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "M\xFC\u015Fteri Diyalog"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: efac78f4c6180ff43963216f13a68e57, type: 2}
+  m_sharedMaterial: {fileID: -6299892451939943820, guid: efac78f4c6180ff43963216f13a68e57, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2385,8 +2466,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: TIMER
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: efac78f4c6180ff43963216f13a68e57, type: 2}
+  m_sharedMaterial: {fileID: -6299892451939943820, guid: efac78f4c6180ff43963216f13a68e57, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2416,7 +2497,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 16
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
