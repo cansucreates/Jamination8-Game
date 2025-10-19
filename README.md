@@ -12,7 +12,7 @@ Eğer oyun bitiminde “0” değerinden yüksek ise itibarınız, kraliyet aile
 
 # Oynanış
 
-Oyun point and click mantığıyla oynanmaktadır. Gelen iksir siparişine göre 3 kart seçiyorsunuz ve karıştır butonuna basarak siparişi tamamlıyorsunuz. Seçtiğiniz kartlar sarı renkte görünecektir.
+Oyun point and click mantığıyla oynanmaktadır. Gelen iksir siparişine göre 3 kart seçiyorsunuz ve karıştır butonuna basarak siparişi tamamlıyorsunuz. Seçtiğiniz kartlar mavi renkte görünecektir.
 
 # Takım
 
