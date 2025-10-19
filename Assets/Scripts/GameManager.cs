@@ -20,6 +20,10 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public CustomerRequest currentRequest;
 
+    // round sayacı
+    private int currentRound = 0;
+    private int maxRounds = 5;
+
     void Awake()
     {
         uiController = FindFirstObjectByType<GameUIController>();
@@ -44,6 +48,16 @@ public class GameManager : MonoBehaviour
     {
         StopAllCoroutines();
         timerRunning = false;
+
+        // 5 round sonra oyun bitti mi kontrolü
+        if (currentRound >= maxRounds)
+        {
+            EndGame();
+            return;
+        }
+
+        currentRound++;
+        Debug.Log($"--- Round {currentRound} Başladı ---");
 
         if (allRequests == null || allRequests.Count == 0)
         {
@@ -97,6 +111,13 @@ public class GameManager : MonoBehaviour
         timeRemaining = roundTime;
         timerRunning = true;
         uiController?.UpdateTimer(Mathf.CeilToInt(timeRemaining));
+    }
+
+    // end game fonksiyonu
+    private void EndGame()
+    {
+        timerRunning = false;
+        uiController.ShowGameOver(shopRating >= 0, shopRating);
     }
 
     public void SubmitPotion(List<CardData> selectedCards)

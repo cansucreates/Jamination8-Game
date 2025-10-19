@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameUIController : MonoBehaviour
@@ -23,6 +24,12 @@ public class GameUIController : MonoBehaviour
     [Header("Karıştırma Sesi")]
     public AudioSource audioSource;
     public AudioClip stirSound;
+
+    [Header("Game Over Ekranı")]
+    public GameObject gameOverPanel;
+    public TextMeshProUGUI gameOverText;
+    public TextMeshProUGUI finalScoreText;
+    public Button retryButton;
 
     private List<CardDisplay> selectedCards = new List<CardDisplay>();
     private Vector2[] originalPositions;
@@ -234,5 +241,43 @@ public class GameUIController : MonoBehaviour
 
         // Kart gönderimi (tam animasyon bittiğinde)
         gameManager?.SubmitPotion(selectedData);
+    }
+
+    // Game Over ekranını göster
+    public void ShowGameOver(bool won, int finalScore)
+    {
+        if (gameOverPanel == null)
+            return;
+
+        gameOverPanel.SetActive(true);
+
+        if (gameOverText != null)
+        {
+            gameOverText.text = won
+                ? "Tebrikler! Kraliyet ailesi hünerlerinizin sözde olmadığını gördü. Artık bir saray mensubu olarak kraliyet ailesine destek oluyorsunuz."
+                : "Kraliyeti bilerek zayıflattığınız öne sürüldü! İksir dükkanınız kapatıldı. Kraliyet ailesinin uygun gördüğü cezayı bekliyorsunuz.";
+        }
+
+        if (finalScoreText != null)
+        {
+            finalScoreText.text = $"Final Dükkan Puanınız: {finalScore}";
+        }
+
+        if (retryButton != null)
+        {
+            retryButton.onClick.AddListener(RestartGame);
+        }
+    }
+
+    public void RestartGame()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(
+            UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex
+        );
+    }
+
+    public void OnReturnToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

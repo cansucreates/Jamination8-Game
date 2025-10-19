@@ -15,7 +15,6 @@ public class CustomerRequest
 
     public string GetTypeString()
     {
-       
         switch (requiredType)
         {
             case MaterialType.Sıvı:
@@ -30,6 +29,4 @@ public class CustomerRequest
                 return "Bilinmiyor";
         }
     }
-
-  
 }
