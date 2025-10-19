@@ -23,9 +23,9 @@ Oyun pointclick mantığıyla oynanmaktadır. Gelen iksir siparişine göre 3 ka
 
 # Assetler
 
-Kartlar, Arkaplan ve UI tasarımı Canva uygulamasından yapılmıştır.
-Müzik Suno AI ile yapılmıştır.
-Ses efektleri için [freesound](https://freesound.org/) kullanılmıştır.
-[Oyun içi font](https://fonts.google.com/specimen/Milonga)
-[Kart tasarım font](https://www.dafont.com/iceland-winterstorm.font)
+* Kartlar, Arkaplan ve UI tasarımı Canva uygulamasından yapılmıştır.
+* Müzik Suno AI ile yapılmıştır.
+* Ses efektleri için [freesound](https://freesound.org/) kullanılmıştır.
+* [Oyun içi font](https://fonts.google.com/specimen/Milonga)
+* [Kart tasarım font](https://www.dafont.com/iceland-winterstorm.font)
 
